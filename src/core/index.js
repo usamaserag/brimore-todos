@@ -13,3 +13,23 @@ export const addTodoCall = async (newTodo) => {
   });
   return response.data;
 };
+
+export const deleteTodoCall = async (id) => {
+  await axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`);
+};
+
+export const toggleTodoCall = async (id, completed) => {
+  const response = await axios.patch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+    completed,
+  });
+
+  return response.data;
+};
+
+export const editTodoCall = async (id, title) => {
+  const response = await axios.patch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+    title,
+  });
+
+  return response.data;
+};

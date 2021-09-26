@@ -7,6 +7,9 @@ import store from './store';
 
 const app = createApp(App);
 
-app.use(store).use(Antd).mount('#app');
+app
+  .use(store)
+  .use(Antd)
+  .mount('#app');
 
 export default app;
