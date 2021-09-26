@@ -1,14 +1,14 @@
 <template>
-  <CreateTodo />
+  <todo-list title="My Todos" />
 </template>
 
 <script>
-import CreateTodo from './components/CreateTodo.vue';
+import TodoList from './components/TodoList.vue';
 
 export default {
   name: 'App',
   components: {
-    CreateTodo,
+    TodoList,
   },
 };
 </script>

@@ -31,5 +31,9 @@ export default createStore({
   },
   getters: {
     newTodo: (state) => state.newTodo,
+    getFilteredTodos: (state) => (current, pageSize) => state.todos.filter(
+      (e, index) => index >= (current - 1) * pageSize
+          && index < current * pageSize,
+    ),
   },
 });
