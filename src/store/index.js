@@ -1,6 +1,10 @@
 import { createStore } from 'vuex';
 import {
-  getTodosCall, addTodoCall, deleteTodoCall, toggleTodoCall, editTodoCall,
+  getTodosCall,
+  addTodoCall,
+  deleteTodoCall,
+  toggleTodoCall,
+  editTodoCall,
 } from '@/core';
 
 export default createStore({
@@ -55,7 +59,8 @@ export default createStore({
   getters: {
     newTodo: (state) => state.newTodo,
     getFilteredTodos: (state) => (current, pageSize) => state.todos.filter(
-      (e, index) => index >= (current - 1) * pageSize && index < current * pageSize,
+      (e, index) => index >= (current - 1) * pageSize
+          && index < current * pageSize,
     ),
   },
 });

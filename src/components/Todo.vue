@@ -13,7 +13,7 @@
         <a-form-item class="edit-field">
           <a-input
             type="text"
-            v-model:value="formState.newTodoDescription"
+            v-model:value="newTodoDescription"
             @blur="finishEditing()"
             ref="newTodo"
           />
@@ -21,7 +21,11 @@
       </a-form>
     </div>
     <div>
-      <a-button type="primary" @click="startEditing()" class="edit-btn">
+      <a-button
+        type="primary"
+        @click="startEditing()"
+        class="edit-btn"
+      >
         <template #icon>
           <EditOutlined />
         </template>
@@ -93,11 +97,7 @@ export default {
       }
     },
     finishEditing() {
-      this.$store.dispatch('editTodo', {
-        id: this.id,
-        index: this.index,
-        newTodoDescription: this.formState.newTodoDescription,
-      });
+      this.$store.dispatch('editTodo', { id: this.id, index: this.index, newTodoDescription: this.newTodoDescription });
       this.isEditing = false;
     },
   },
